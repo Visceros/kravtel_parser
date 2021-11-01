@@ -25,9 +25,6 @@ with open(path.join("C:\\Work", "texts_kravtel_result.csv"), 'w', encoding='utf-
                 #continue
             elif soup_webpage.find('span', class_='catalog_item_wrap1') is not None:
                 writer.writerow([url.get_text(), webpage.status_code, '0'])
-                #lookup_area = soup_webpage.select('div.bx_catalog_list_home > span.catalog_item_wrap1')
-                #product_count = len(lookup_area)
-                #writer.writerow([url.get_text(), webpage.status_code, product_count])
         else:
             print(url.get_text(), 'status code: 404')
             writer.writerow([url.get_text(), webpage.status_code])
